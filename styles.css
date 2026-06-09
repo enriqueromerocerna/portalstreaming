@@ -670,7 +670,15 @@ body {
 .all-platforms__grid {
   display: grid;
   grid-template-columns: repeat(4,1fr);
-  gap: 14px;
+  gap: 16px;
+}
+.all-platforms__grid .platform-card {
+  height: 130px;
+}
+.all-platforms__grid .plat-logo {
+  max-height: 70px;
+  max-width: 85%;
+  object-fit: contain;
 }
 .ap-card {
   background: #1c1c1c;
