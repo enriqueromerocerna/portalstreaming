@@ -1175,3 +1175,167 @@ body {
   .pagos { padding: 3rem 1.5rem; }
   .pagos__grid { grid-template-columns: 1fr; max-width: 320px; }
 }
+
+/* ── NETFLIX PRICING MODAL ── */
+.netflix-pricing-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  padding: 1rem;
+}
+.netflix-pricing-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.netflix-pricing-container {
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  max-width: 860px;
+  width: 100%;
+  position: relative;
+  transform: scale(.92) translateY(20px);
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+.netflix-pricing-overlay.active .netflix-pricing-container {
+  transform: scale(1) translateY(0);
+}
+.netflix-pricing-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: #2a2a2a;
+  border: none;
+  color: #fff;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.netflix-pricing-close:hover { background: #E50914; }
+.netflix-pricing-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.netflix-pricing-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  color: #fff;
+  margin: .5rem 0 .25rem;
+  letter-spacing: 1px;
+}
+.netflix-pricing-sub {
+  color: #999;
+  font-size: .95rem;
+}
+.netflix-pricing-plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.netflix-plan {
+  background: #1c1c1c;
+  border: 2px solid #2a2a2a;
+  border-radius: 18px;
+  padding: 1.8rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+  position: relative;
+}
+.netflix-plan:hover {
+  border-color: #E50914;
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(229,9,20,.2);
+}
+.netflix-plan--featured {
+  border-color: #E50914;
+  background: #1f0000;
+  transform: scale(1.03);
+}
+.netflix-plan--featured:hover {
+  transform: scale(1.03) translateY(-4px);
+}
+.netflix-plan-badge {
+  background: #2a2a2a;
+  color: #ccc;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: .3rem .8rem;
+  border-radius: 20px;
+}
+.netflix-plan-badge--hot {
+  background: #E50914;
+  color: #fff;
+}
+.netflix-plan-duration {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  color: #888;
+}
+.netflix-plan-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  color: #fff;
+  line-height: 1;
+}
+.netflix-plan-currency {
+  font-size: 1.5rem;
+  vertical-align: top;
+  margin-top: .5rem;
+  display: inline-block;
+  color: #E50914;
+}
+.netflix-plan-features {
+  list-style: none;
+  padding: 0; margin: 0;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.netflix-plan-features li {
+  font-size: .85rem;
+  color: #ccc;
+}
+.netflix-plan-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #2a2a2a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: .85rem;
+  font-weight: 700;
+  font-size: .9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s, transform .15s;
+  margin-top: auto;
+}
+.netflix-plan-btn:hover { background: #E50914; transform: scale(1.02); }
+.netflix-plan-btn--featured { background: #E50914; }
+.netflix-plan-btn--featured:hover { background: #c4070f; }
+
+@media (max-width: 700px) {
+  .netflix-pricing-plans { grid-template-columns: 1fr; }
+  .netflix-plan--featured { transform: none; }
+  .netflix-plan--featured:hover { transform: translateY(-4px); }
+}
