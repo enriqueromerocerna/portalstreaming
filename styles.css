@@ -1339,3 +1339,168 @@ body {
   .netflix-plan--featured { transform: none; }
   .netflix-plan--featured:hover { transform: translateY(-4px); }
 }
+
+/* ── GENERIC PRICING MODAL (Disney, Max, Prime, YouTube, Spotify, DGO) ── */
+.pricing-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.85);
+  backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+  padding: 1rem;
+}
+.pricing-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+.pricing-container {
+  --accent: #E50914;
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  max-width: 860px;
+  width: 100%;
+  position: relative;
+  transform: scale(.92) translateY(20px);
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1);
+}
+.pricing-overlay.active .pricing-container {
+  transform: scale(1) translateY(0);
+}
+.pricing-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  background: #2a2a2a;
+  border: none;
+  color: #fff;
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+.pricing-close:hover { background: var(--accent); }
+.pricing-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.pricing-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.4rem;
+  color: #fff;
+  margin: 0 0 .25rem;
+  letter-spacing: 2px;
+}
+.pricing-sub {
+  color: #999;
+  font-size: .95rem;
+  margin: 0;
+}
+.pricing-plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.pricing-plan {
+  background: #1c1c1c;
+  border: 2px solid #2a2a2a;
+  border-radius: 18px;
+  padding: 1.8rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .8rem;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+.pricing-plan:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.3);
+}
+.pricing-plan--featured {
+  border-color: var(--accent);
+  background: #1a1a1a;
+  transform: scale(1.03);
+}
+.pricing-plan--featured:hover {
+  transform: scale(1.03) translateY(-4px);
+}
+.pricing-plan-badge {
+  background: #2a2a2a;
+  color: #ccc;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: .3rem .8rem;
+  border-radius: 20px;
+}
+.pricing-plan-badge--hot {
+  background: var(--accent);
+  color: #fff;
+}
+.pricing-plan-duration {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  color: #888;
+}
+.pricing-plan-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  color: #fff;
+  line-height: 1;
+}
+.pricing-plan-currency {
+  font-size: 1.5rem;
+  vertical-align: top;
+  margin-top: .5rem;
+  display: inline-block;
+  color: var(--accent);
+}
+.pricing-plan-features {
+  list-style: none;
+  padding: 0; margin: 0;
+  text-align: left;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.pricing-plan-features li {
+  font-size: .85rem;
+  color: #ccc;
+}
+.pricing-plan-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #2a2a2a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: .85rem;
+  font-weight: 700;
+  font-size: .9rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background .2s, transform .15s;
+  margin-top: auto;
+}
+.pricing-plan-btn:hover { background: var(--accent); transform: scale(1.02); }
+.pricing-plan-btn--featured { background: var(--accent); }
+.pricing-plan-btn--featured:hover { filter: brightness(1.15); }
+
+@media (max-width: 700px) {
+  .pricing-plans { grid-template-columns: 1fr; }
+  .pricing-plan--featured { transform: none; }
+  .pricing-plan--featured:hover { transform: translateY(-4px); }
+}
