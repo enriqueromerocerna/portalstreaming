@@ -1504,3 +1504,69 @@ body {
   .pricing-plan--featured { transform: none; }
   .pricing-plan--featured:hover { transform: translateY(-4px); }
 }
+
+/* ── EXPANDABLE TABS NAVBAR ── */
+.exp-tabs-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 99px;
+  padding: 5px;
+}
+.exp-tab {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  color: #aaa;
+  text-decoration: none;
+  border-radius: 99px;
+  padding: 8px 10px;
+  font-size: .82rem;
+  font-weight: 600;
+  font-family: 'Barlow', sans-serif;
+  transition: background .25s, color .25s, gap .3s, padding .3s;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+.exp-tab__icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.exp-tab__icon svg {
+  width: 18px;
+  height: 18px;
+}
+.exp-tab__label {
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-width .3s ease, opacity .25s ease, margin .3s ease;
+  margin-left: 0;
+}
+.exp-tab:hover .exp-tab__label,
+.exp-tab--active .exp-tab__label {
+  max-width: 140px;
+  opacity: 1;
+  margin-left: 6px;
+}
+.exp-tab:hover {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+}
+.exp-tab--active {
+  background: #E50914;
+  color: #fff;
+}
+.exp-tab--active:hover {
+  background: #c4070f;
+}
+@media (max-width: 900px) {
+  .exp-tabs-nav { display: none; }
+}
