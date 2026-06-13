@@ -1570,3 +1570,147 @@ body {
 @media (max-width: 900px) {
   .exp-tabs-nav { display: none; }
 }
+
+/* ── CIRCULAR PLATFORM SHOWCASE ── */
+.circular-showcase {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Orbit ring */
+.circular-orbit {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.circular-orbit::before {
+  content: '';
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border-radius: 50%;
+  border: 1px dashed rgba(229,9,20,0.25);
+  pointer-events: none;
+}
+
+/* Each orbiting logo */
+.orbit-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 68px;
+  height: 68px;
+  border-radius: 16px;
+  background: #1c1c1c;
+  border: 2px solid #2a2a2a;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border-color .2s, box-shadow .2s, transform .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.orbit-dot img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+  pointer-events: none;
+}
+.orbit-dot:hover,
+.orbit-dot--active {
+  border-color: #E50914;
+  box-shadow: 0 0 18px rgba(229,9,20,0.45);
+  z-index: 10;
+}
+
+/* Center card */
+.circular-center {
+  position: relative;
+  z-index: 5;
+  background: #141414;
+  border: 2px solid #2a2a2a;
+  border-radius: 22px;
+  padding: 1.6rem 1.4rem;
+  width: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .7rem;
+  transition: border-color .3s;
+}
+.circular-center--active {
+  border-color: #E50914;
+  box-shadow: 0 0 30px rgba(229,9,20,.2);
+}
+.circular-center__logo-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 14px;
+  background: #222;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.circular-center__logo-wrap img {
+  width: 90%;
+  height: 90%;
+  object-fit: contain;
+}
+.circular-center__name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: #fff;
+  margin: 0;
+}
+.circular-center__features {
+  list-style: none;
+  padding: 0; margin: 0;
+  text-align: left;
+  width: 100%;
+}
+.circular-center__features li {
+  font-size: .75rem;
+  color: #bbb;
+  padding: .18rem 0;
+}
+.circular-center__btn {
+  background: #E50914;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: .55rem 1.2rem;
+  font-weight: 700;
+  font-size: .8rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background .2s;
+  display: none;
+}
+.circular-center__btn:hover { background: #c4070f; }
+
+/* Default center state — Portal Streaming logo */
+#circular-center-img[src=""] {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .circular-showcase { height: 420px; }
+  .circular-orbit::before { width: 340px; height: 340px; }
+  .orbit-dot { width: 52px; height: 52px; border-radius: 12px; }
+}
+@media (max-width: 480px) {
+  .circular-showcase { height: 360px; }
+  .circular-orbit::before { width: 280px; height: 280px; }
+  .orbit-dot { width: 44px; height: 44px; border-radius: 10px; }
+}
