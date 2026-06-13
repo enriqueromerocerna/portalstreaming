@@ -286,7 +286,7 @@
       <!-- Center info panel -->
       <div class="circular-center" id="circular-center">
         <div class="circular-center__logo-wrap">
-          <img id="circular-center-img" src="" alt="" />
+          <img id="circular-center-img" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxODAgNTAiPgogIDwhLS0gU3BoZXJlIGljb24gKHNpbXBsaWZpZWQgdmVyc2lvbiBvZiB0aGUgUG9ydGFsIFN0cmVhbWluZyBnbG9iZSkgLS0+CiAgPGVsbGlwc2UgY3g9IjI0IiBjeT0iMjUiIHJ4PSIyMCIgcnk9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNFNTA5MTQiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPGVsbGlwc2UgY3g9IjI0IiBjeT0iMjUiIHJ4PSIxMiIgcnk9IjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNFNTA5MTQiIHN0cm9rZS13aWR0aD0iMS4yIi8+CiAgPGVsbGlwc2UgY3g9IjI0IiBjeT0iMjUiIHJ4PSI1IiByeT0iMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0U1MDkxNCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPGxpbmUgeDE9IjQiIHkxPSIyNSIgeDI9IjQ0IiB5Mj0iMjUiIHN0cm9rZT0iI0U1MDkxNCIgc3Ryb2tlLXdpZHRoPSIxIi8+CiAgPGxpbmUgeDE9IjYiIHkxPSIxNiIgeDI9IjQyIiB5Mj0iMTYiIHN0cm9rZT0iI0U1MDkxNCIgc3Ryb2tlLXdpZHRoPSIwLjgiLz4KICA8bGluZSB4MT0iNiIgeTE9IjM0IiB4Mj0iNDIiIHkyPSIzNCIgc3Ryb2tlPSIjRTUwOTE0IiBzdHJva2Utd2lkdGg9IjAuOCIvPgogIDwhLS0gVGV4dCAtLT4KICA8dGV4dCB4PSI1MiIgeT0iMjIiIGZvbnQtZmFtaWx5PSJBcmlhbCBCbGFjaywgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjkwMCIgZm9udC1zaXplPSIxNiIgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSIwLjUiPlBPUlRBTDwvdGV4dD4KICA8dGV4dCB4PSI1MiIgeT0iMzgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjUwMCIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2FhYWFhYSIgbGV0dGVyLXNwYWNpbmc9IjMiPlNUUkVBTUlORzwvdGV4dD4KPC9zdmc+Cg==" alt="Portal Streaming" />
         </div>
         <h3 id="circular-center-name" class="circular-center__name">Portal Streaming</h3>
         <ul class="circular-center__features">
@@ -1072,10 +1072,10 @@ const OPEN_FN = {
       const a    = ((base + currentAngle) * Math.PI) / 180;
       const x    = Math.cos(a) * radius;
       const y    = Math.sin(a) * radius;
-      dot.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
-
-      // Keep images upright
-      dot.querySelector('img').style.transform = `rotate(${-currentAngle}deg)`;
+      // translateX/Y only — no rotation applied to the dot itself
+      dot.style.left = `calc(50% + ${x}px)`;
+      dot.style.top  = `calc(50% + ${y}px)`;
+      dot.style.transform = `translate(-50%, -50%)`;
     });
     requestAnimationFrame(spin);
   }

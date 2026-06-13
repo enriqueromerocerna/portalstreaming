@@ -1714,3 +1714,29 @@ body {
   .circular-orbit::before { width: 280px; height: 280px; }
   .orbit-dot { width: 44px; height: 44px; border-radius: 10px; }
 }
+
+/* ── ORBIT DOTS — icono de celular, sin rotación ── */
+.orbit-dot {
+  will-change: transform;
+  transform-origin: center center;
+}
+/* Override: images always upright */
+.orbit-dot img {
+  transform: none !important;
+  transition: transform 0s !important;
+  border-radius: 4px;
+}
+/* Elegant icon shadow */
+.orbit-dot {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+}
+.orbit-dot:hover,
+.orbit-dot--active {
+  box-shadow: 0 0 22px rgba(229,9,20,0.6), 0 4px 16px rgba(0,0,0,0.5);
+}
+/* Center logo default state */
+.circular-center__logo-wrap img {
+  border-radius: 8px;
+}
+/* Hide "Ver planes" btn when no platform selected */
+#circular-center-btn { display: none; }
