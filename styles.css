@@ -1740,3 +1740,19 @@ body {
 }
 /* Hide "Ver planes" btn when no platform selected */
 #circular-center-btn { display: none; }
+
+/* ===========================================================
+   OPTIMIZACIÓN DE RENDIMIENTO (sin cambios visuales)
+   El navegador omite el pintado de estas secciones mientras
+   están fuera de pantalla, liberando trabajo durante el scroll.
+   La palabra clave "auto" memoriza el tamaño real tras la
+   primera medición, así que no hay saltos en la barra de scroll.
+   =========================================================== */
+#catalogo,
+#combos,
+#como-funciona,
+#contacto,
+#pagos {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 700px;
+}
