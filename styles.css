@@ -1756,3 +1756,35 @@ body {
   content-visibility: auto;
   contain-intrinsic-size: auto 700px;
 }
+
+/* ===========================================================
+   ICONOS DE PLATAFORMA ESTILO "APP" (sección Todas las plataformas)
+   Los iconos ahora son cuadrados de marca y llenan el tile.
+   =========================================================== */
+.orbit-dot {
+  background: transparent;
+  border: 2px solid transparent;
+  border-radius: 22%;
+  box-shadow: 0 6px 18px rgba(0,0,0,.45);
+}
+.orbit-dot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+.orbit-dot:hover,
+.orbit-dot--active {
+  border-color: #E50914;
+  box-shadow: 0 0 20px rgba(229,9,20,.55);
+}
+/* El logo central llena su recuadro */
+.circular-center__logo-wrap {
+  background: transparent;
+}
+.circular-center__logo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
