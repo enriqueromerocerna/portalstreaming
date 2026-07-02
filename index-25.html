@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portal Streaming – Tu acceso directo al entretenimiento digital</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="navbar__logo">
+      <svg width="160" height="40" viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="16" fill="none" stroke="#E50914" stroke-width="1.8"/>
+        <ellipse cx="20" cy="20" rx="9" ry="16" fill="none" stroke="#E50914" stroke-width="1.4"/>
+        <ellipse cx="20" cy="20" rx="3.5" ry="16" fill="none" stroke="#E50914" stroke-width="1"/>
+        <line x1="4" y1="20" x2="36" y2="20" stroke="#E50914" stroke-width="1.2"/>
+        <line x1="5.5" y1="12" x2="34.5" y2="12" stroke="#E50914" stroke-width="0.9"/>
+        <line x1="5.5" y1="28" x2="34.5" y2="28" stroke="#E50914" stroke-width="0.9"/>
+        <text x="44" y="18" font-family="Arial Black,sans-serif" font-weight="900" font-size="14" fill="white" letter-spacing="0.5">PORTAL</text>
+        <text x="44" y="32" font-family="Arial,sans-serif" font-weight="400" font-size="9" fill="#999999" letter-spacing="3.5">STREAMING</text>
+      </svg>
+    </div>
+    <nav class="exp-tabs-nav" id="exp-tabs-nav">
+      <a href="#inicio" class="exp-tab exp-tab--active">
+        <span class="exp-tab__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/><path d="M9 21V12h6v9"/></svg></span>
+        <span class="exp-tab__label">Inicio</span>
+      </a>
+      <a href="#catalogo" class="exp-tab">
+        <span class="exp-tab__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg></span>
+        <span class="exp-tab__label">Catálogo</span>
+      </a>
+      <a href="#combos" class="exp-tab">
+        <span class="exp-tab__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></span>
+        <span class="exp-tab__label">Combos</span>
+      </a>
+      <a href="#como-funciona" class="exp-tab">
+        <span class="exp-tab__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg></span>
+        <span class="exp-tab__label">¿Cómo funciona?</span>
+      </a>
+      <a href="#contacto" class="exp-tab">
+        <span class="exp-tab__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
+        <span class="exp-tab__label">Contacto</span>
+      </a>
+      <a href="#pagos" class="exp-tab">
+        <span class="exp-tab__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 15h4"/></svg></span>
+        <span class="exp-tab__label">Métodos de pago</span>
+      </a>
+    </nav>
+    <!-- Hamburger (visible solo móvil) -->
+    <div class="navbar__mobile-menu" style="display:none" id="mobile-menu-wrap">
+      <button class="hamburger" id="hamburger-btn" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <a href="https://wa.me/51904609346" class="btn-whatsapp btn-whatsapp--outline" target="_blank">
+      <svg class="btn-whatsapp__icon" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Escríbenos
+    </a>
+  </header>
+
+  <!-- MOBILE DRAWER -->
+  <nav class="mobile-drawer" id="mobile-drawer" style="display:none">
+    <a href="#inicio" class="active">Inicio</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#combos">Combos</a>
+    <a href="#como-funciona">Cómo funciona</a>
+    <a href="#contacto">Contacto</a>
+    <a href="#pagos">Métodos de pago</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg">
+      <img fetchpriority="high" decoding="async" src="hero-bg-img.jpg" alt="" class="hero__bg-img"  width="1440" height="804" />
+      <div class="hero__bg-overlay"></div>
+    </div>
+    <div class="hero__content">
+      <h1 class="hero__title">Tu acceso directo al<br />entretenimiento digital</h1>
+      <p class="hero__subtitle">Netflix, Disney+, Max, Prime Video, Crunchyroll,<br />Canva, CapCut, Office 365 y más</p>
+      <div class="hero__cta">
+        <a href="#catalogo" class="btn btn--primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+          Comprar ahora
+        </a>
+        <a href="#catalogo" class="btn btn--outline">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+          Ver catálogo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATAFORMAS -->
+  <section class="platforms" id="catalogo">
+    <!-- Unicorn Studio animated background -->
+    <div class="platforms__bg"></div>
+    <div class="section-divider">
+      <span class="section-divider__line"></span>
+      <h2 class="section-divider__title">Plataformas disponibles</h2>
+      <span class="section-divider__line"></span>
+    </div>
+        <div class="platforms__grid">
+
+      <div class="platform-card platform-card--netflix" style="cursor:pointer" onclick="openNetflixPricing()">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg" alt="Netflix" class="plat-logo" />
+      </div>
+
+      <div class="platform-card" style="cursor:pointer" onclick="openPricingModal('disney')">
+        <img loading="lazy" decoding="async" src="logo-disney.jpg" alt="Disney+" class="plat-logo"  width="500" height="333" />
+      </div>
+
+      <div class="platform-card platform-card--max" style="cursor:pointer" onclick="openPricingModal('max')">
+        <img loading="lazy" decoding="async" src="logo-max.jpg" alt="Max" class="plat-logo"  width="500" height="333" />
+      </div>
+
+      <div class="platform-card platform-card--primevideo" style="cursor:pointer" onclick="openPricingModal('primevideo')">
+        <img loading="lazy" decoding="async" src="logo-primevideo.jpg" alt="Prime Video" class="plat-logo"  width="500" height="333" />
+      </div>
+
+      <div class="platform-card" style="cursor:pointer;background:#fff" onclick="openPricingModal('youtube')">
+        <img loading="lazy" decoding="async" src="logo-youtube.jpg" alt="YouTube Premium" class="plat-logo"  width="500" height="215" />
+      </div>
+
+      <div class="platform-card" style="cursor:pointer;background:#1DB954" onclick="openPricingModal('spotify')">
+        <img loading="lazy" decoding="async" src="logo-spotify.jpg" alt="Spotify" class="plat-logo"  width="500" height="333" />
+      </div>
+
+      <div class="platform-card" style="cursor:pointer;background:#fff" onclick="openPricingModal('dgo')">
+        <img loading="lazy" decoding="async" src="logo-dgo.jpg" alt="DGO" class="plat-logo"  width="500" height="333" />
+      </div>
+
+      <div class="platform-card platform-card--more" id="btn-more-platforms" onclick="document.getElementById('section-all-platforms').scrollIntoView({behavior:'smooth'})">
+        <button class="colorful-btn" type="button">
+          <span class="colorful-btn__bg"></span>
+          <span class="colorful-btn__label">
+            <span class="colorful-btn__dots">···</span>
+            <span>y más...</span>
+          </span>
+        </button>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- COMBOS -->
+  <section class="combos" id="combos">
+    <div class="combos__bg"></div>
+    <div class="section-divider">
+      <span class="section-divider__line"></span>
+      <h2 class="section-divider__title">Combos recomendados</h2>
+      <span class="section-divider__line"></span>
+    </div>
+    <div class="combos__grid" id="combos-grid">
+      <div class="combo-card">
+        <div class="combo-card__badge">POPULAR</div>
+        <h3 class="combo-card__name">Combo Entretenimiento</h3>
+        <p class="combo-card__desc">Netflix + Disney+ + Max</p>
+        <div class="combo-card__platforms">
+          <span class="combo-pill combo-pill--netflix">Netflix</span>
+          <span class="combo-pill combo-pill--disney">Disney+</span>
+          <span class="combo-pill combo-pill--max">Max</span>
+        </div>
+        <a href="https://wa.me/51904609346" class="btn btn--primary combo-card__btn" target="_blank">Consultar precio</a>
+      </div>
+      <div class="combo-card combo-card--featured">
+        <div class="combo-card__badge combo-card__badge--gold">MEJOR VALOR</div>
+        <h3 class="combo-card__name">Combo Premium</h3>
+        <p class="combo-card__desc">Netflix + Disney+ + Max + Prime Video + Spotify</p>
+        <div class="combo-card__platforms">
+          <span class="combo-pill combo-pill--netflix">Netflix</span>
+          <span class="combo-pill combo-pill--disney">Disney+</span>
+          <span class="combo-pill combo-pill--max">Max</span>
+          <span class="combo-pill combo-pill--prime">Prime</span>
+          <span class="combo-pill combo-pill--spotify">Spotify</span>
+        </div>
+        <a href="https://wa.me/51904609346" class="btn btn--primary combo-card__btn" target="_blank">Consultar precio</a>
+      </div>
+      <div class="combo-card">
+        <div class="combo-card__badge">ANIME & SERIES</div>
+        <h3 class="combo-card__name">Combo Anime</h3>
+        <p class="combo-card__desc">Crunchyroll + Netflix + Prime Video</p>
+        <div class="combo-card__platforms">
+          <span class="combo-pill combo-pill--crunchy">Crunchyroll</span>
+          <span class="combo-pill combo-pill--netflix">Netflix</span>
+          <span class="combo-pill combo-pill--prime">Prime</span>
+        </div>
+      <div class="combo-card combo-card--builder" onclick="openComboBuilder(event)">
+        <div class="combo-card__badge combo-card__badge--builder">PERSONALIZADO</div>
+        <div class="combo-card__builder-icon">+</div>
+        <h3 class="combo-card__name">Arma tu combo</h3>
+        <p class="combo-card__desc">Elige las plataformas que quieras y te pasamos el precio</p>
+        <button class="btn btn--primary combo-card__btn" onclick="openComboBuilder(event)">Arma tu combo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="features" id="como-funciona">
+    <div class="features__grid">
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" fill="#E50914" opacity=".15"/>
+            <path d="M14 24l7 7 13-14" stroke="#E50914" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M24 12v4M24 32v4M12 24h4M32 24h4" stroke="#E50914" stroke-width="2" stroke-linecap="round" opacity=".5"/>
+          </svg>
+        </div>
+        <h3 class="feature-card__title">Entregas rápidas y seguras</h3>
+        <p class="feature-card__desc">Recibe tu acceso al instante de forma 100% segura.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" fill="#E50914" opacity=".15"/>
+            <rect x="13" y="20" width="22" height="16" rx="3" stroke="#E50914" stroke-width="2.5"/>
+            <path d="M17 20v-4a7 7 0 0114 0v4" stroke="#E50914" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="24" cy="28" r="2.5" fill="#E50914"/>
+            <path d="M24 30.5v2" stroke="#E50914" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="feature-card__title">Cuentas verificadas</h3>
+        <p class="feature-card__desc">Accesos premium verificados y listos para usar.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" fill="#E50914" opacity=".15"/>
+            <path d="M18 14h-3a2 2 0 00-2 2v3c0 8.837 7.163 16 16 16h3a2 2 0 002-2v-3a1 1 0 00-.684-.949l-5-1.667a1 1 0 00-1.158.467l-1.406 2.343A15.934 15.934 0 0118.806 23.25l2.343-1.406a1 1 0 00.467-1.158l-1.667-5A1 1 0 0018 14z" stroke="#E50914" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="feature-card__title">Soporte dedicado</h3>
+        <p class="feature-card__desc">Atención personalizada durante tu suscripción.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-card__icon">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="20" fill="#E50914" opacity=".15"/>
+            <path d="M14 34L34 14" stroke="#E50914" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="17" cy="17" r="4" stroke="#E50914" stroke-width="2.5"/>
+            <circle cx="31" cy="31" r="4" stroke="#E50914" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <h3 class="feature-card__title">Promociones exclusivas</h3>
+        <p class="feature-card__desc">Ofertas y combos especiales todo el año.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHATSAPP BANNER -->
+  <section class="wa-banner" id="contacto">
+    <div class="wa-banner__left">
+      <div class="wa-banner__icon-wrap">
+        <svg viewBox="0 0 24 24" width="28" height="28" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+      </div>
+      <div>
+        <p class="wa-banner__title">¿Tienes dudas o necesitas ayuda?</p>
+        <p class="wa-banner__sub">Escríbenos por WhatsApp, estamos para ayudarte.</p>
+      </div>
+    </div>
+    <a href="https://wa.me/51904609346" class="btn-whatsapp btn-whatsapp--solid" target="_blank">
+      <svg viewBox="0 0 24 24" class="btn-whatsapp__icon" fill="white" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Escríbenos ahora
+    </a>
+  </section>
+
+  <!-- SECCIÓN: TODAS LAS PLATAFORMAS -->
+  <!-- TODAS LAS PLATAFORMAS — Circular Animation -->
+  <section class="all-platforms" id="section-all-platforms">
+    <div class="section-divider">
+      <span class="section-divider__line"></span>
+      <h2 class="section-divider__title">Todas las plataformas</h2>
+      <span class="section-divider__line"></span>
+    </div>
+    <p class="all-platforms__sub">Selecciona una plataforma para ver más información</p>
+
+    <div class="circular-showcase">
+      <!-- Center info panel -->
+      <div class="circular-center" id="circular-center">
+        <div class="circular-center__logo-wrap">
+          <img fetchpriority="high" decoding="async" id="circular-center-img" src="portal-logo.jpg" alt="Portal Streaming" />
+        </div>
+        <h3 id="circular-center-name" class="circular-center__name">Portal Streaming</h3>
+        <ul class="circular-center__features">
+          <li>✅ Activación directa a TV</li>
+          <li>✅ Soporte 24/7</li>
+          <li>✅ Perfil privado</li>
+          <li>✅ Cuenta verificada</li>
+        </ul>
+        <button id="circular-center-btn" class="circular-center__btn" onclick="">Ver planes</button>
+      </div>
+
+      <!-- Orbiting logos container -->
+      <div class="circular-orbit" id="circular-orbit">
+      </div>
+    </div>
+  </section>
+
+
+  <!-- MODAL DE PLATAFORMA -->
+  <div class="platform-modal" id="platform-modal">
+    <div class="platform-modal__backdrop" onclick="closePlatformModal()"></div>
+    <div class="platform-modal__box">
+      <button class="platform-modal__close" onclick="closePlatformModal()">✕</button>
+      <div class="platform-modal__logo" id="modal-logo"></div>
+      <h2 class="platform-modal__name" id="modal-name"></h2>
+      <p class="platform-modal__desc" id="modal-desc"></p>
+      <div id="modal-accordion" style="display:none;width:100%"></div>
+      <a href="https://wa.me/51904609346" class="btn btn--primary platform-modal__cta" target="_blank">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- MODAL ARMA TU COMBO -->
+  <div class="platform-modal combo-builder-modal" id="combo-builder-modal">
+    <div class="platform-modal__backdrop" onclick="closeComboBuilder()"></div>
+    <div class="platform-modal__box combo-builder-box">
+      <button class="platform-modal__close" onclick="closeComboBuilder()">✕</button>
+      <div class="combo-builder__header-icon">🎁</div>
+      <h2 class="platform-modal__name">Arma tu combo</h2>
+      <p class="platform-modal__desc">Selecciona 2 o más plataformas y te enviamos el precio por WhatsApp</p>
+      <div class="combo-builder__grid" id="combo-builder-grid"></div>
+      <p class="combo-builder__hint" id="combo-builder-hint">Selecciona al menos 2 plataformas</p>
+      <a href="#" id="combo-builder-cta" class="btn btn--primary platform-modal__cta combo-builder__cta--disabled" target="_blank" onclick="return comboBuilderCtaClick(event)">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Consultar por WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <!-- MÉTODOS DE PAGO -->
+  <section class="pagos" id="pagos">
+    <div class="section-header">
+      <div class="section-header__line"></div>
+      <h2 class="section-header__title">Métodos de pago</h2>
+      <div class="section-header__line"></div>
+    </div>
+    <p class="pagos__sub">Elige tu método preferido y realiza tu pago de forma rápida y segura</p>
+
+    <div class="pagos__grid">
+
+      <!-- YAPE -->
+      <div class="pago-card">
+        <div class="pago-card__logo">
+          <img loading="lazy" decoding="async" src="yape.jpg" alt="Yape" class="pago-logo-img"  width="300" height="300" />
+        </div>
+        <div class="pago-card__info">
+          <p class="pago-card__numero">+51 906 591 534</p>
+          <p class="pago-card__nombre">Enrique R.</p>
+        </div>
+      </div>
+
+      <!-- PLIN -->
+      <div class="pago-card">
+        <div class="pago-card__logo">
+          <img loading="lazy" decoding="async" src="plin.jpg" alt="Plin" class="pago-logo-img"  width="300" height="300" />
+        </div>
+        <div class="pago-card__info">
+          <p class="pago-card__numero">+51 906 591 534</p>
+          <p class="pago-card__nombre">Enrique R.</p>
+        </div>
+      </div>
+
+      <!-- BINANCE -->
+      <div class="pago-card">
+        <div class="pago-card__logo" style="background:#fff;border-radius:16px;padding:10px;">
+          <img loading="lazy" decoding="async" src="binance.jpg" alt="Binance" class="pago-logo-img"  width="300" height="200" />
+        </div>
+        <div class="pago-card__info">
+          <p class="pago-card__numero" style="font-size:.85rem">Consultar por WhatsApp</p>
+          <p class="pago-card__nombre">
+            <a href="https://wa.me/51904609346" target="_blank" style="color:#F3BA2F;text-decoration:none;font-weight:700">→ Escríbenos</a>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__logo">
+      <svg width="140" height="36" viewBox="0 0 160 40" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="16" fill="none" stroke="#E50914" stroke-width="1.8"/>
+        <ellipse cx="20" cy="20" rx="9" ry="16" fill="none" stroke="#E50914" stroke-width="1.4"/>
+        <ellipse cx="20" cy="20" rx="3.5" ry="16" fill="none" stroke="#E50914" stroke-width="1"/>
+        <line x1="4" y1="20" x2="36" y2="20" stroke="#E50914" stroke-width="1.2"/>
+        <line x1="5.5" y1="12" x2="34.5" y2="12" stroke="#E50914" stroke-width="0.9"/>
+        <line x1="5.5" y1="28" x2="34.5" y2="28" stroke="#E50914" stroke-width="0.9"/>
+        <text x="44" y="18" font-family="Arial Black,sans-serif" font-weight="900" font-size="14" fill="white" letter-spacing="0.5">PORTAL</text>
+        <text x="44" y="32" font-family="Arial,sans-serif" font-weight="400" font-size="9" fill="#999999" letter-spacing="3.5">STREAMING</text>
+      </svg>
+    </div>
+    <p class="footer__copy">© 2026 Portal Streaming. Todos los derechos reservados.</p>
+    <div class="footer__links">
+      <a href="#" class="footer__link">Términos y condiciones</a>
+      <a href="#" class="footer__link">Política de privacidad</a>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+
+    // ── Expandable Tabs Navbar ────────────────────
+    const expTabs = document.querySelectorAll(".exp-tab");
+
+    function setExpActive(el) {
+      expTabs.forEach(t => t.classList.remove("exp-tab--active"));
+      el.classList.add("exp-tab--active");
+    }
+
+    expTabs.forEach(tab => {
+      tab.addEventListener("click", () => setExpActive(tab));
+    });
+
+    const sections = ["inicio","catalogo","combos","como-funciona","contacto","pagos"];
+    const scrollObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id   = entry.target.id;
+          const link = document.querySelector(`.exp-tab[href="#${id}"]`);
+          if (link) setExpActive(link);
+        }
+      });
+    }, { threshold: 0.4 });
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) scrollObserver.observe(el);
+    });
+
+    // ── Spotlight on combo cards ─────────────────
+    document.querySelectorAll(".combo-card").forEach(card => {
+      card.addEventListener("mousemove", e => {
+        const r   = card.getBoundingClientRect();
+        const x   = e.clientX - r.left;
+        const y   = e.clientY - r.top;
+        card.style.setProperty("--sx", x + "px");
+        card.style.setProperty("--sy", y + "px");
+        card.querySelector ? null : null;
+        // Move the ::before pseudo via custom props
+        card.style.background = `radial-gradient(circle 200px at ${x}px ${y}px, rgba(229,9,20,.12), transparent 70%), #1c1c1c`;
+      });
+      card.addEventListener("mouseleave", () => {
+        card.style.background = "";
+      });
+    });
+
+  });
+
+  // ── Platform modal data ───────────────────────
+  const PLATFORM_DATA = {
+    dgo:        { name:"DGO",           desc:"La plataforma de DirecTV con el mejor contenido deportivo, películas y series." },
+    movistar:   { name:"Movistar Play", desc:"Televisión, películas, series y deportes en vivo de Movistar." },
+    youtube:    { name:"YouTube Premium",desc:"YouTube sin anuncios, descargas offline y acceso a YouTube Music." },
+    chatgpt:    { name:"ChatGPT Plus",  desc:"Acceso a GPT-4, respuestas más rápidas y funciones exclusivas de ChatGPT." },
+    canva:      { name:"Canva Pro",     desc:"Diseño gráfico profesional con miles de plantillas y recursos premium." },
+    capcut:     { name:"CapCut Pro",    desc:"Edición de video profesional con todas las herramientas desbloqueadas." },
+    office365:  { name:"Office 365",    desc:"Word, Excel, PowerPoint, Teams y más. Todo Microsoft Office en la nube." },
+    netflix:    { name:"Netflix", desc:"Acceso a miles de series, películas y documentales originales. Disponible en todos tus dispositivos.", hasAccordion: true },
+    disney:     { name:"Disney+",     desc:"Todo el universo Disney, Marvel, Star Wars, Pixar y National Geographic en un solo lugar." },
+    max:        { name:"Max",         desc:"El mejor contenido de HBO, Warner Bros y Max Originals. Series y películas premium." },
+    primevideo: { name:"Prime Video", desc:"Amazon Prime Video con series exclusivas, películas y canales adicionales." },
+    crunchyroll:{ name:"Crunchyroll", desc:"La plataforma número 1 de anime con el catálogo más grande del mundo." },
+    appletv:    { name:"Apple TV+",   desc:"Contenido original de Apple con producciones premiadas y exclusivas." },
+    spotify:    { name:"Spotify",     desc:"Música sin límites, podcasts y audiolibros. Escucha lo que quieras, cuando quieras." },
+    paramount:  { name:"Paramount+",  desc:"Series y películas de CBS, Nickelodeon, MTV y producciones originales exclusivas." },
+    hulu:       { name:"Hulu",        desc:"Series en vivo, películas y contenido on-demand con los mejores estrenos." },
+    canva:      { name:"Canva",       desc:"La herramienta de diseño más popular. Crea gráficos, presentaciones y más fácilmente." },
+    capcut:     { name:"CapCut",      desc:"Editor de video profesional con efectos, filtros y herramientas de edición avanzadas." },
+    office365:  { name:"Office 365",  desc:"Word, Excel, PowerPoint, Teams y más. Todo Microsoft Office en la nube." },
+  };
+
+  const NETFLIX_IMGS = [
+    { src: "netflix-1.jpg", label: "Planes y precios" },
+    { src: "netflix-2.jpg", label: "Soporte Netflix" },
+    { src: "netflix-3.jpg", label: "Nueva Actualización" },
+  ];
+
+  function openPlatformModal(id) {
+    const data = PLATFORM_DATA[id];
+    if (!data) return;
+    document.getElementById("modal-name").textContent = data.name;
+    document.getElementById("modal-desc").textContent = data.desc;
+    document.getElementById("modal-logo").innerHTML   = "";
+
+    // Accordion de imágenes para Netflix
+    const accContainer = document.getElementById("modal-accordion");
+    if (data.hasAccordion) {
+      accContainer.innerHTML = buildAccordion(NETFLIX_IMGS);
+      accContainer.style.display = "block";
+      initAccordion();
+    } else {
+      accContainer.innerHTML = "";
+      accContainer.style.display = "none";
+    }
+
+    document.getElementById("platform-modal").classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function buildAccordion(images) {
+    return `<div class="acc-wrap">` +
+      images.map((img, i) => `
+        <div class="acc-item ${i===0?'acc-active':''}" data-index="${i}">
+          <img src="${img.src}" alt="${img.label}" class="acc-img"/>
+          <div class="acc-label">${img.label}</div>
+        </div>`).join('') +
+      `</div>`;
+  }
+
+  function initAccordion() {
+    document.querySelectorAll(".acc-item").forEach(item => {
+      item.addEventListener("click", () => {
+        document.querySelectorAll(".acc-item").forEach(i => i.classList.remove("acc-active"));
+        item.classList.add("acc-active");
+      });
+    });
+  }
+
+  function closePlatformModal() {
+    document.getElementById("platform-modal").classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  function showPlatform(id) {
+    openPlatformModal(id);
+  }
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") { closePlatformModal(); closeDrawer(); }
+  });
+
+  // ── Hamburger menu ───────────────────────────
+  const hamburgerBtn  = document.getElementById("hamburger-btn");
+  const mobileDrawer  = document.getElementById("mobile-drawer");
+  const mobileMenuWrap = document.getElementById("mobile-menu-wrap");
+
+  function closeDrawer() {
+    if (mobileDrawer) {
+      mobileDrawer.classList.remove("open");
+    }
+    document.body.style.overflow = "";
+  }
+
+  if (hamburgerBtn) {
+    hamburgerBtn.addEventListener("click", () => {
+      const isOpen = mobileDrawer.classList.toggle("open");
+      document.body.style.overflow = isOpen ? "hidden" : "";
+    });
+  }
+
+  // Close drawer when a link is clicked
+  if (mobileDrawer) {
+    mobileDrawer.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => closeDrawer());
+    });
+  }
+  </script>
+
+<!-- NETFLIX PRICING MODAL -->
+<div id="netflix-pricing-modal" class="netflix-pricing-overlay" onclick="if(event.target===this)closeNetflixPricing()">
+  <div class="netflix-pricing-container">
+    <button class="netflix-pricing-close" onclick="closeNetflixPricing()">✕</button>
+    <div class="netflix-pricing-header">
+      <svg width="90" height="26" viewBox="0 0 111 30" fill="#E50914" xmlns="http://www.w3.org/2000/svg">
+        <path d="M105.062 14.28L111 30c-1.75-.25-3.5-.563-5.28-.845l-3.345-8.686-3.437 7.969c-1.687-.282-3.344-.376-5.031-.595l6.031-13.75L94.468 0h5.063l3.062 7.974L105.875 0h5.187l-6 14.28zM90.47 0h-4.563v27.345c1.5.094 3.031.157 4.563.344V0zm-8.563 26.937c-4.187-.375-8.375-.656-12.656-.781V0h4.687v22.188c2.688.062 5.375.28 8 .531v4.218zM64.25 10.657v4.25h-6.406V26H53.22V0H65.25v4.28h-7.406v6.377h6.406zM47.44 0h-4.594v26.125c1.5.031 3.063.094 4.594.25V0zM36.064 24.937c-3.5-.375-7-.594-10.594-.688V14.25H31.5V9.97h-6.031V4.28H32.5V0H21v24.562c4.906.094 9.843.375 14.718.875l.344-4.5H36.064zM4.78 0v18.375C3.25 12.656 1.656 6.937.094 1.187.031.813 0 .406 0 0h4.78v.031c0-.031 0-.031 0 0zm0 30c-1.594-.25-3.156-.5-4.75-.688V0h4.75v30z"/>
+      </svg>
+      <h2 class="netflix-pricing-title">Planes Netflix</h2>
+      <p class="netflix-pricing-sub">Elige el plan que mejor se adapte a ti</p>
+    </div>
+    <div class="netflix-pricing-plans">
+
+      <div class="netflix-plan">
+        <div class="netflix-plan-badge">Básico</div>
+        <div class="netflix-plan-duration">1 MES</div>
+        <div class="netflix-plan-price"><span class="netflix-plan-currency">S/</span>22</div>
+        <ul class="netflix-plan-features">
+          <li>✅ Activación directa a TV</li>
+          <li>✅ Soporte 24/7</li>
+          <li>✅ Perfil independiente</li>
+          <li>✅ Plan Premium 4K</li>
+        </ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C%20quiero%20el%20plan%20Netflix%201%20mes%20S%2F22" target="_blank" class="netflix-plan-btn">Comprar ahora</a>
+      </div>
+
+      <div class="netflix-plan netflix-plan--featured">
+        <div class="netflix-plan-badge netflix-plan-badge--hot">🔥 Popular</div>
+        <div class="netflix-plan-duration">3 MESES</div>
+        <div class="netflix-plan-price"><span class="netflix-plan-currency">S/</span>50</div>
+        <ul class="netflix-plan-features">
+          <li>✅ Activación directa a TV</li>
+          <li>✅ Soporte 24/7</li>
+          <li>✅ Perfil independiente</li>
+          <li>✅ Plan Premium 4K</li>
+        </ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C%20quiero%20el%20plan%20Netflix%203%20meses%20S%2F50" target="_blank" class="netflix-plan-btn netflix-plan-btn--featured">Comprar ahora</a>
+      </div>
+
+      <div class="netflix-plan">
+        <div class="netflix-plan-badge">Ahorro</div>
+        <div class="netflix-plan-duration">6 MESES</div>
+        <div class="netflix-plan-price"><span class="netflix-plan-currency">S/</span>85</div>
+        <ul class="netflix-plan-features">
+          <li>✅ Activación directa a TV</li>
+          <li>✅ Soporte 24/7</li>
+          <li>✅ Perfil independiente</li>
+          <li>✅ Plan Premium 4K</li>
+        </ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C%20quiero%20el%20plan%20Netflix%206%20meses%20S%2F85" target="_blank" class="netflix-plan-btn">Comprar ahora</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+
+function openNetflixPricing() {
+  const modal = document.getElementById('netflix-pricing-modal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeNetflixPricing() {
+  const modal = document.getElementById('netflix-pricing-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+// Close with Escape key
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape') closeNetflixPricing();
+});
+</script>
+
+
+<!-- PLATFORM PRICING MODALS -->
+
+<div id="pricing-modal-disney" class="pricing-overlay" onclick="if(event.target===this)closePricingModal('disney')">
+  <div class="pricing-container" style="--accent:#113CCF">
+    <button class="pricing-close" onclick="closePricingModal('disney')">✕</button>
+    <div class="pricing-header">
+      <h2 class="pricing-title">Disney+</h2>
+      <p class="pricing-sub">Elige el plan que mejor se adapte a ti</p>
+    </div>
+    <div class="pricing-plans">
+      <div class="pricing-plan ">
+        <div class="pricing-plan-badge ">Básico</div>
+        <div class="pricing-plan-duration">1 MES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>20</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Plan Premium 4K</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+Disney++1 MES+S%2F20" target="_blank" class="pricing-plan-btn ">Comprar ahora</a>
+      </div>
+      <div class="pricing-plan pricing-plan--featured">
+        <div class="pricing-plan-badge pricing-plan-badge--hot">🔥 Popular</div>
+        <div class="pricing-plan-duration">3 MESES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>45</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Plan Premium 4K</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+Disney++3 MESES+S%2F45" target="_blank" class="pricing-plan-btn pricing-plan-btn--featured">Comprar ahora</a>
+      </div>
+      <div class="pricing-plan ">
+        <div class="pricing-plan-badge ">Ahorro</div>
+        <div class="pricing-plan-duration">6 MESES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>75</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Plan Premium 4K</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+Disney++6 MESES+S%2F75" target="_blank" class="pricing-plan-btn ">Comprar ahora</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="pricing-modal-max" class="pricing-overlay" onclick="if(event.target===this)closePricingModal('max')">
+  <div class="pricing-container" style="--accent:#0023FF">
+    <button class="pricing-close" onclick="closePricingModal('max')">✕</button>
+    <div class="pricing-header">
+      <h2 class="pricing-title">Max</h2>
+      <p class="pricing-sub">Elige el plan que mejor se adapte a ti</p>
+    </div>
+    <div class="pricing-plans">
+      <div class="pricing-plan ">
+        <div class="pricing-plan-badge ">Básico</div>
+        <div class="pricing-plan-duration">1 MES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>12</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Plan Premium 4K</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+Max+1 MES+S%2F12" target="_blank" class="pricing-plan-btn ">Comprar ahora</a>
+      </div>
+      <div class="pricing-plan pricing-plan--featured">
+        <div class="pricing-plan-badge pricing-plan-badge--hot">🔥 Popular</div>
+        <div class="pricing-plan-duration">3 MESES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>32</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Plan Premium 4K</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+Max+3 MESES+S%2F32" target="_blank" class="pricing-plan-btn pricing-plan-btn--featured">Comprar ahora</a>
+      </div>
+      <div class="pricing-plan ">
+        <div class="pricing-plan-badge ">Ahorro</div>
+        <div class="pricing-plan-duration">6 MESES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>62</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Plan Premium 4K</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+Max+6 MESES+S%2F62" target="_blank" class="pricing-plan-btn ">Comprar ahora</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="pricing-modal-primevideo" class="pricing-overlay" onclick="if(event.target===this)closePricingModal('primevideo')">
+  <div class="pricing-container" style="--accent:#00A8E1">
+    <button class="pricing-close" onclick="closePricingModal('primevideo')">✕</button>
+    <div class="pricing-header">
+      <h2 class="pricing-title">Prime Video</h2>
+      <p class="pricing-sub">Elige el plan que mejor se adapte a ti</p>
+    </div>
+    <div class="pricing-plans">
+      <div class="pricing-plan ">
+        <div class="pricing-plan-badge ">Básico</div>
+        <div class="pricing-plan-duration">1 MES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>15</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Plan Premium 4K</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+Prime+Video+1 MES+S%2F15" target="_blank" class="pricing-plan-btn ">Comprar ahora</a>
+      </div>
+      <div class="pricing-plan pricing-plan--featured">
+        <div class="pricing-plan-badge pricing-plan-badge--hot">🔥 Popular</div>
+        <div class="pricing-plan-duration">3 MESES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>38</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Plan Premium 4K</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+Prime+Video+3 MESES+S%2F38" target="_blank" class="pricing-plan-btn pricing-plan-btn--featured">Comprar ahora</a>
+      </div>
+      <div class="pricing-plan ">
+        <div class="pricing-plan-badge ">Ahorro</div>
+        <div class="pricing-plan-duration">6 MESES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>78</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Plan Premium 4K</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+Prime+Video+6 MESES+S%2F78" target="_blank" class="pricing-plan-btn ">Comprar ahora</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="pricing-modal-youtube" class="pricing-overlay" onclick="if(event.target===this)closePricingModal('youtube')">
+  <div class="pricing-container" style="--accent:#FF0000">
+    <button class="pricing-close" onclick="closePricingModal('youtube')">✕</button>
+    <div class="pricing-header">
+      <h2 class="pricing-title">YouTube Premium</h2>
+      <p class="pricing-sub">Elige el plan que mejor se adapte a ti</p>
+    </div>
+    <div class="pricing-plans">
+      <div class="pricing-plan ">
+        <div class="pricing-plan-badge ">Básico</div>
+        <div class="pricing-plan-duration">1 MES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>12</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Sin anuncios</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+YouTube+Premium+1 MES+S%2F12" target="_blank" class="pricing-plan-btn ">Comprar ahora</a>
+      </div>
+      <div class="pricing-plan pricing-plan--featured">
+        <div class="pricing-plan-badge pricing-plan-badge--hot">🔥 Popular</div>
+        <div class="pricing-plan-duration">6 MESES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>50</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Sin anuncios</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+YouTube+Premium+6 MESES+S%2F50" target="_blank" class="pricing-plan-btn pricing-plan-btn--featured">Comprar ahora</a>
+      </div>
+      <div class="pricing-plan ">
+        <div class="pricing-plan-badge ">Ahorro</div>
+        <div class="pricing-plan-duration">12 MESES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>80</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Sin anuncios</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+YouTube+Premium+12 MESES+S%2F80" target="_blank" class="pricing-plan-btn ">Comprar ahora</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="pricing-modal-spotify" class="pricing-overlay" onclick="if(event.target===this)closePricingModal('spotify')">
+  <div class="pricing-container" style="--accent:#1DB954">
+    <button class="pricing-close" onclick="closePricingModal('spotify')">✕</button>
+    <div class="pricing-header">
+      <h2 class="pricing-title">Spotify</h2>
+      <p class="pricing-sub">Elige el plan que mejor se adapte a ti</p>
+    </div>
+    <div class="pricing-plans">
+      <div class="pricing-plan ">
+        <div class="pricing-plan-badge ">Básico</div>
+        <div class="pricing-plan-duration">1 MES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>13</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa</li><li>✅ Soporte 24/7</li><li>✅ Cuenta independiente</li><li>✅ Sin anuncios</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+Spotify+1 MES+S%2F13" target="_blank" class="pricing-plan-btn ">Comprar ahora</a>
+      </div>
+      <div class="pricing-plan pricing-plan--featured">
+        <div class="pricing-plan-badge pricing-plan-badge--hot">🔥 Popular</div>
+        <div class="pricing-plan-duration">3 MESES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>35</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa</li><li>✅ Soporte 24/7</li><li>✅ Cuenta independiente</li><li>✅ Sin anuncios</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+Spotify+3 MESES+S%2F35" target="_blank" class="pricing-plan-btn pricing-plan-btn--featured">Comprar ahora</a>
+      </div>
+      <div class="pricing-plan ">
+        <div class="pricing-plan-badge ">Ahorro</div>
+        <div class="pricing-plan-duration">6 MESES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>65</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa</li><li>✅ Soporte 24/7</li><li>✅ Cuenta independiente</li><li>✅ Sin anuncios</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+Spotify+6 MESES+S%2F65" target="_blank" class="pricing-plan-btn ">Comprar ahora</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="pricing-modal-dgo" class="pricing-overlay" onclick="if(event.target===this)closePricingModal('dgo')">
+  <div class="pricing-container" style="--accent:#F47D20">
+    <button class="pricing-close" onclick="closePricingModal('dgo')">✕</button>
+    <div class="pricing-header">
+      <h2 class="pricing-title">DGO</h2>
+      <p class="pricing-sub">Elige el plan que mejor se adapte a ti</p>
+    </div>
+    <div class="pricing-plans">
+      <div class="pricing-plan ">
+        <div class="pricing-plan-badge ">Básico</div>
+        <div class="pricing-plan-duration">1 MES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>35</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Contenido en vivo</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+DGO+1 MES+S%2F35" target="_blank" class="pricing-plan-btn ">Comprar ahora</a>
+      </div>
+      <div class="pricing-plan pricing-plan--featured">
+        <div class="pricing-plan-badge pricing-plan-badge--hot">🔥 Popular</div>
+        <div class="pricing-plan-duration">3 MESES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>90</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Contenido en vivo</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+DGO+3 MESES+S%2F90" target="_blank" class="pricing-plan-btn pricing-plan-btn--featured">Comprar ahora</a>
+      </div>
+      <div class="pricing-plan ">
+        <div class="pricing-plan-badge ">Ahorro</div>
+        <div class="pricing-plan-duration">6 MESES</div>
+        <div class="pricing-plan-price"><span class="pricing-plan-currency">S/</span>150</div>
+        <ul class="pricing-plan-features"><li>✅ Activación directa a TV</li><li>✅ Soporte 24/7</li><li>✅ Perfil independiente</li><li>✅ Contenido en vivo</li></ul>
+        <a href="https://wa.me/51904609346?text=Hola%2C+quiero+el+plan+DGO+6 MESES+S%2F150" target="_blank" class="pricing-plan-btn ">Comprar ahora</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openPricingModal(id) {
+  const modal = document.getElementById('pricing-modal-' + id);
+  if (modal) { modal.classList.add('active'); document.body.style.overflow = 'hidden'; }
+}
+function closePricingModal(id) {
+  const modal = document.getElementById('pricing-modal-' + id);
+  if (modal) { modal.classList.remove('active'); document.body.style.overflow = ''; }
+}
+document.addEventListener('keydown', function(e){
+  if(e.key==='Escape'){
+    document.querySelectorAll('.pricing-overlay.active').forEach(m=>{
+      m.classList.remove('active'); document.body.style.overflow='';
+    });
+  }
+});
+</script>
+
+
+<script>
+// ── Circular Platform Showcase ─────────────────────────────────
+const PLATFORMS = [
+  { id: 'netflix', name: 'Netflix', src: `icon-netflix.jpg` },
+  { id: 'disney', name: 'Disney+', src: `icon-disney.jpg` },
+  { id: 'max', name: 'Max', src: `icon-max.jpg` },
+  { id: 'primevideo', name: 'Prime Video', src: `icon-primevideo.jpg` },
+  { id: 'youtube', name: 'YouTube Premium', src: `icon-youtube.jpg` },
+  { id: 'spotify', name: 'Spotify', src: `icon-spotify.jpg` },
+  { id: 'dgo', name: 'DGO', src: `icon-dgo.jpg` },
+  { id: 'paramount', name: 'Paramount+', src: `icon-paramount.jpg` },
+  { id: 'office365', name: 'Office 365', src: `icon-office365.jpg` },
+  { id: 'canva', name: 'Canva', src: `icon-canva.jpg` },
+  { id: 'capcut', name: 'CapCut Pro', src: `icon-capcut.jpg` },
+  { id: 'chatgpt', name: 'ChatGPT', src: `icon-chatgpt.jpg` },
+  { id: 'crunchyroll', name: 'Crunchyroll', src: `icon-crunchyroll.jpg` },
+  { id: 'appletv', name: 'Apple TV+', src: `icon-appletv.jpg` },
+  { id: 'movistar', name: 'Movistar Play', src: `icon-movistar.jpg` },
+];
+
+const OPEN_FN = {
+  netflix:    () => openNetflixPricing(),
+  disney:     () => openPricingModal('disney'),
+  max:        () => openPricingModal('max'),
+  primevideo: () => openPricingModal('primevideo'),
+  youtube:    () => openPricingModal('youtube'),
+  spotify:    () => openPricingModal('spotify'),
+  dgo:        () => openPricingModal('dgo'),
+  paramount:  () => openPlatformModal('paramount'),
+  office365:  () => openPlatformModal('office365'),
+  canva:      () => openPlatformModal('canva'),
+  capcut:     () => openPlatformModal('capcut'),
+  chatgpt:    () => openPlatformModal('chatgpt'),
+  crunchyroll:() => openPlatformModal('crunchyroll'),
+  appletv:    () => openPlatformModal('appletv'),
+  movistar:   () => openPlatformModal('movistar'),
+};
+
+// ── Arma tu combo ───────────────────────────────────────────────
+const selectedComboPlatforms = new Set();
+
+function openComboBuilder(e) {
+  if (e) e.stopPropagation();
+  renderComboBuilderGrid();
+  document.getElementById('combo-builder-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeComboBuilder() {
+  document.getElementById('combo-builder-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function renderComboBuilderGrid() {
+  const grid = document.getElementById('combo-builder-grid');
+  if (grid.dataset.rendered) return;
+  grid.innerHTML = '';
+  PLATFORMS.forEach(p => {
+    const item = document.createElement('div');
+    item.className = 'combo-builder__item';
+    item.innerHTML = `<img src="${p.src}" alt="${p.name}" loading="lazy" /><span>${p.name}</span>`;
+    item.addEventListener('click', () => toggleComboPlatform(p, item));
+    grid.appendChild(item);
+  });
+  grid.dataset.rendered = '1';
+}
+
+function toggleComboPlatform(p, el) {
+  if (selectedComboPlatforms.has(p.id)) {
+    selectedComboPlatforms.delete(p.id);
+    el.classList.remove('combo-builder__item--active');
+  } else {
+    selectedComboPlatforms.add(p.id);
+    el.classList.add('combo-builder__item--active');
+  }
+  updateComboBuilderUI();
+}
+
+function updateComboBuilderUI() {
+  const hint  = document.getElementById('combo-builder-hint');
+  const cta   = document.getElementById('combo-builder-cta');
+  const names = PLATFORMS.filter(p => selectedComboPlatforms.has(p.id)).map(p => p.name);
+
+  if (names.length < 2) {
+    hint.textContent = 'Selecciona al menos 2 plataformas';
+    cta.classList.add('combo-builder__cta--disabled');
+  } else {
+    hint.textContent = names.join(' + ');
+    cta.classList.remove('combo-builder__cta--disabled');
+    const msg = encodeURIComponent(`Hola, quiero armar un combo con: ${names.join(', ')}. ¿Cuál sería el precio? 🎁`);
+    cta.href = `https://wa.me/51904609346?text=${msg}`;
+  }
+}
+
+function comboBuilderCtaClick(e) {
+  if (selectedComboPlatforms.size < 2) { e.preventDefault(); return false; }
+  return true;
+}
+
+(function initCircular() {
+  const orbit   = document.getElementById('circular-orbit');
+  const centerImg  = document.getElementById('circular-center-img');
+  const centerName = document.getElementById('circular-center-name');
+  const centerBtn  = document.getElementById('circular-center-btn');
+
+  if (!orbit) return;
+
+  const total = PLATFORMS.length;
+  const radius = Math.min(window.innerWidth * 0.28, 220);
+
+  PLATFORMS.forEach((p, i) => {
+    const angle = (i / total) * 360;
+    const rad   = (angle * Math.PI) / 180;
+    const x     = Math.cos(rad) * radius;
+    const y     = Math.sin(rad) * radius;
+
+    const dot = document.createElement('div');
+    dot.className = 'orbit-dot';
+    dot.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+    dot.dataset.angle = angle;
+    dot.innerHTML = `<img src="${p.src}" alt="${p.name}" loading="lazy" />`;
+
+    dot.addEventListener('click', () => {
+      // Highlight selected
+      document.querySelectorAll('.orbit-dot').forEach(d => d.classList.remove('orbit-dot--active'));
+      dot.classList.add('orbit-dot--active');
+
+      // Update center
+      centerImg.src  = p.src;
+      centerImg.alt  = p.name;
+      centerName.textContent = p.name;
+      centerBtn.onclick = OPEN_FN[p.id] || null;
+      centerBtn.style.display = OPEN_FN[p.id] ? 'block' : 'none';
+
+      document.getElementById('circular-center').classList.add('circular-center--active');
+    });
+
+    orbit.appendChild(dot);
+  });
+
+  // Spinning animation
+  let currentAngle = 0;
+  let spinning = true;
+  let speed = 0.08;
+
+  function spin() {
+    if (!spinning) { requestAnimationFrame(spin); return; }
+    currentAngle += speed;
+    const dots = orbit.querySelectorAll('.orbit-dot');
+    dots.forEach((dot, i) => {
+      const base = (i / total) * 360;
+      const a    = ((base + currentAngle) * Math.PI) / 180;
+      const x    = Math.cos(a) * radius;
+      const y    = Math.sin(a) * radius;
+      // translateX/Y only — no rotation applied to the dot itself
+      dot.style.left = `calc(50% + ${x}px)`;
+      dot.style.top  = `calc(50% + ${y}px)`;
+      dot.style.transform = `translate(-50%, -50%)`;
+    });
+    requestAnimationFrame(spin);
+  }
+
+  spin();
+
+  // Pause on hover
+  orbit.addEventListener('mouseenter', () => spinning = false);
+  orbit.addEventListener('mouseleave', () => spinning = true);
+})();
+</script>
+
+</body>
+</html>
