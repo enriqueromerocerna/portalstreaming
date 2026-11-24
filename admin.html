@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex"><title>Panel · Portal Streaming</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,sans-serif;background:#0b0b0d;color:#fff}
+input,button{font:inherit}input{width:100%;padding:9px;border-radius:8px;border:1px solid #333;background:#16161a;color:#fff;margin-top:4px}
+label{display:block;font-size:13px;color:#bbb;margin:8px 0}button{cursor:pointer;border:0;border-radius:8px;padding:9px 14px;background:#e11d2e;color:#fff;font-weight:700}
+button.s{background:#2a2a30}button.x{background:#5a1218;padding:5px 9px}
+#login{max-width:340px;margin:12vh auto;padding:20px}#app{display:none;height:100vh;flex-direction:column}
+.bar{display:flex;gap:8px;align-items:center;padding:10px 12px;border-bottom:1px solid #222;flex-wrap:wrap}.bar b{flex:1}
+.main{flex:1;display:grid;grid-template-columns:1fr;min-height:0}
+#ed{overflow:auto;padding:12px;padding-bottom:80px}#pv{display:none;background:#1a1a1f;flex-direction:column;min-height:0}
+body.pv #ed{display:none}body.pv #pv{display:flex}
+.tabs{display:flex}.tabs button{flex:1;border-radius:0;background:#16161a}.tabs button.on{background:#e11d2e}
+@media(min-width:900px){.main{grid-template-columns:420px 1fr}.tabs{display:none}#pv,body.pv #pv{display:flex}body.pv #ed{display:block}}
+details{background:#111114;border:1px solid #2a2a30;border-radius:12px;padding:10px;margin-bottom:10px}summary{font-weight:700;cursor:pointer}
+.it{border:1px solid #2a2a30;border-radius:10px;padding:8px;margin:8px 0}.row{display:flex;gap:8px}.row>*{flex:1}
+.img{margin:8px 0;font-size:13px;color:#bbb}.img img{display:block;max-height:70px;margin:6px 0;border-radius:6px}
+.dev{display:flex;gap:8px;padding:8px;justify-content:center}#fr{flex:1;border:0;background:#fff;margin:0 auto;width:100%;border-radius:8px}
+#msg{font-size:13px;color:#9f9}#err{color:#f88;font-size:13px}
+</style></head><body>
+<div id="login"><h2>Panel Portal Streaming</h2>
+<label>Correo<input id="em" type="email" autocomplete="username"></label>
+<label>Clave<input id="pw" type="password" autocomplete="current-password"></label>
+<button id="go" style="width:100%">Entrar</button><p id="err"></p></div>
+
+<div id="app">
+ <div class="bar"><b>Mi página de ventas</b><span id="msg"></span><span id="sz" style="font-size:12px;color:#888"></span>
+  <button class="s" id="out">Salir</button><button id="save">Guardar y publicar</button></div>
+ <div class="tabs"><button class="on" data-t="ed">Editar</button><button data-t="pv">Vista previa</button></div>
+ <div class="main"><div id="ed"></div>
+  <div id="pv"><div class="dev"><button class="s" data-d="390px">Celular</button><button class="s" data-d="100%">PC</button></div><iframe id="fr" style="max-width:390px"></iframe></div></div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="portal-render.js"></script>
+<script>
+const $=s=>document.querySelector(s);let cfg,db,t;
+firebase.initializeApp(FB_CONFIG);db=firebase.firestore();
+const esc=s=>String(s??"").replace(/"/g,"&quot;");
+const get=(o,p)=>p.split(".").reduce((a,k)=>a?.[k],o);
+const put=(o,p,v)=>{const k=p.split(".");const l=k.pop();k.reduce((a,x)=>a[x],o)[l]=v};
+const F=(l,p,ty="text")=>`<label>${l}<input type="${ty}" data-p="${p}" value="${esc(get(cfg,p))}"></label>`;
+const I=(l,p)=>{const v=get(cfg,p);return `<div class="img">${l}${v?`<img src="${v}">`:""}<input type="file" accept="image/*" data-img="${p}">${v?`<button class="x" data-clr="${p}">Quitar</button>`:""}</div>`};
+function form(){
+ $("#ed").innerHTML=`<details open><summary>General</summary>${F("Nombre","brand")}${F("WhatsApp (con código de país, ej. 51904609346)","whatsapp","tel")}${F("Color principal","color","color")}${F("Título","heroTitle")}${F("Subtítulo","heroSub")}${I("Logo","logo")}${I("Imagen de fondo","heroImg")}${F("Pie de página","footer")}</details>
+ <details><summary>Plataformas y precios</summary>${cfg.platforms.map((p,i)=>`<div class="it">${F("Nombre",`platforms.${i}.name`)}${I("Logo",`platforms.${i}.logo`)}
+  ${p.plans.map((q,j)=>`<div class="row">${F("Plan",`platforms.${i}.plans.${j}.label`)}${F("Precio S/",`platforms.${i}.plans.${j}.price`)}<button class="x" data-a="delPl:${i}.${j}" style="flex:0;align-self:end;margin-bottom:8px">✕</button></div>`).join("")}
+  <button class="s" data-a="addPl:${i}">+ Plan</button> <button class="x" data-a="delP:${i}">Quitar plataforma</button></div>`).join("")}<button class="s" data-a="addP">+ Plataforma</button></details>
+ <details><summary>Combos</summary>${cfg.combos.map((x,i)=>`<div class="it">${F("Nombre",`combos.${i}.name`)}${F("Descripción",`combos.${i}.desc`)}${F("Texto del botón / precio",`combos.${i}.price`)}<button class="x" data-a="delC:${i}">Quitar</button></div>`).join("")}<button class="s" data-a="addC">+ Combo</button></details>
+ <details><summary>Métodos de pago</summary>${cfg.pagos.map((x,i)=>`<div class="it">${F("Método",`pagos.${i}.name`)}${F("Número / dato",`pagos.${i}.number`)}${F("Titular",`pagos.${i}.holder`)}${I("Imagen / QR",`pagos.${i}.img`)}<button class="x" data-a="delPay:${i}">Quitar</button></div>`).join("")}<button class="s" data-a="addPay">+ Método</button></details>`;
+}
+function prev(){$("#fr").srcdoc=PortalRender.doc(cfg);const n=new Blob([JSON.stringify(cfg)]).size;$("#sz").textContent=Math.round(n/1024)+" KB / 1000";$("#save").disabled=n>1000000}
+const later=()=>{clearTimeout(t);t=setTimeout(prev,250)};
+$("#ed").addEventListener("input",e=>{const p=e.target.dataset.p;if(p){put(cfg,p,e.target.value);later()}});
+$("#ed").addEventListener("change",e=>{const p=e.target.dataset.img;if(!p||!e.target.files[0])return;
+ const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const k=Math.min(1,700/Math.max(im.width,im.height));const c=document.createElement("canvas");c.width=im.width*k;c.height=im.height*k;c.getContext("2d").drawImage(im,0,0,c.width,c.height);put(cfg,p,c.toDataURL("image/jpeg",.65));form();prev()};im.src=r.result};r.readAsDataURL(e.target.files[0])});
+$("#ed").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;
+ if(b.dataset.clr){put(cfg,b.dataset.clr,"");form();prev();return}
+ const a=b.dataset.a;if(!a)return;const[k,v]=a.split(":");const[i,j]=(v||"").split(".").map(Number);
+ ({addP:()=>cfg.platforms.push({name:"Nueva",logo:"",plans:[{label:"1 mes",price:10}]}),delP:()=>cfg.platforms.splice(i,1),
+ addPl:()=>cfg.platforms[i].plans.push({label:"1 mes",price:10}),delPl:()=>cfg.platforms[i].plans.splice(j,1),
+ addC:()=>cfg.combos.push({name:"Nuevo combo",desc:"",price:"Consultar precio"}),delC:()=>cfg.combos.splice(i,1),
+ addPay:()=>cfg.pagos.push({name:"Nuevo",number:"",holder:"",img:""}),delPay:()=>cfg.pagos.splice(i,1)})[k]();form();prev()});
+document.querySelectorAll("[data-t]").forEach(b=>b.onclick=()=>{document.body.classList.toggle("pv",b.dataset.t=="pv");document.querySelectorAll(".tabs button").forEach(x=>x.classList.toggle("on",x==b));prev()});
+document.querySelectorAll("[data-d]").forEach(b=>b.onclick=()=>$("#fr").style.maxWidth=b.dataset.d);
+$("#save").onclick=async()=>{try{await db.doc("portal/config").set(cfg);$("#msg").textContent="✔ Publicado";}catch(x){$("#msg").textContent="Error: "+x.message}setTimeout(()=>$("#msg").textContent="",4000)};
+$("#go").onclick=()=>firebase.auth().signInWithEmailAndPassword($("#em").value,$("#pw").value).catch(()=>$("#err").textContent="Correo o clave incorrectos");
+$("#out").onclick=()=>firebase.auth().signOut();
+firebase.auth().onAuthStateChanged(async u=>{$("#login").style.display=u?"none":"block";$("#app").style.display=u?"flex":"none";if(!u)return;
+ let d=null;try{d=await db.doc("portal/config").get()}catch(x){}
+ cfg={...structuredClone(PORTAL_DEFAULT),...(d&&d.exists?d.data():{})};form();prev()});
+</script></body></html>
