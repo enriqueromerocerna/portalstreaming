@@ -52,15 +52,20 @@ footer{margin-top:50px;padding:24px 0;text-align:center;color:#888;border-top:1p
     return [css, body];
   },
   doc(c) { const [s, b] = this.parts(c); return `<!doctype html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><style>${s}</style>${b}`; },
-  async mount() { // úsalo en la web pública
-    let c = window.PORTAL_DEFAULT;
+    async mount() {
+    const show = c => {
+      const [s, b] = this.parts(c);
+      let st = document.getElementById("portal-style");
+      if (!st) { st = document.createElement("style"); st.id = "portal-style"; document.head.appendChild(st); }
+      st.textContent = s;
+      document.title = c.brand;
+      document.getElementById("portal-root").innerHTML = b;
+    };
+    show(window.PORTAL_DEFAULT);
     try {
       firebase.initializeApp(FB_CONFIG);
       const d = await firebase.firestore().doc("portal/config").get();
-      if (d.exists) c = { ...c, ...d.data() };
+      if (d.exists) show({ ...window.PORTAL_DEFAULT, ...d.data() });
     } catch (x) { console.warn(x); }
-    const [s, b] = this.parts(c);
-    document.head.insertAdjacentHTML("beforeend", `<style>${s}</style>`);
-    document.title = c.brand; document.getElementById("portal-root").innerHTML = b;
   }
 };
